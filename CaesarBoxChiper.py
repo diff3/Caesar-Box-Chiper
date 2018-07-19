@@ -1,5 +1,3 @@
-import numpy as np
-
 class CaesarBox:
     def encode(self, msg, key):
         msg = self.split(msg, key)
@@ -25,12 +23,15 @@ class CaesarBox:
         return [msg[i:i + width] for i in range(0, len(msg), width)]
 
     def calculate_width(self, msg, key):
-        return int(np.ceil(len(msg) / key))
+        if float(len(msg) / key) > int(len(msg)/key):
+            return int(len(msg)/key) + 1
 
-key = 3
+        return int(len(msg)/key)
 
-msg = "Hello World"
-print ("Plain text: %s" %(msg))
+key = 7
+
+msg = "Hello World öioehföwehföwehfewouwefuhewfuh"
+print ("Plain:   %s" %(msg))
 
 c = CaesarBox()
 
