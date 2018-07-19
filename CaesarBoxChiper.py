@@ -28,9 +28,9 @@ class CaesarBox:
 
         return int(len(msg)/key)
 
-key = 7
+key = 3
 
-msg = "Hello World öioehföwehföwehfewouwefuhewfuh"
+msg = "Hello World"
 print ("Plain:   %s" %(msg))
 
 c = CaesarBox()
